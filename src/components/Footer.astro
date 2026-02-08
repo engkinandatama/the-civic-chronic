@@ -1,0 +1,32 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="w-full border-t border-gray-200 py-12 px-6 bg-[#f2f2f4]">
+    <div
+        class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+    >
+        <div class="flex flex-col text-center md:text-left">
+            <h4 class="font-serif font-bold text-xl mb-1 text-ink">
+                THE CIVIC CHRONIC
+            </h4>
+            <p class="text-sm text-gray-500">
+                Documenting failure since yesterday.
+            </p>
+        </div>
+        <div class="flex gap-8 text-sm font-medium text-gray-600">
+            <a href="#" class="hover:text-primary transition-colors"
+                >Submit a Failure</a
+            >
+            <a href="#" class="hover:text-primary transition-colors">About</a>
+            <a href="/archive" class="hover:text-primary transition-colors"
+                >Archives</a
+            >
+            <a href="#" class="hover:text-primary transition-colors">Legal</a>
+        </div>
+        <div class="text-xs text-gray-400 text-center md:text-right">
+            <p>&copy; {currentYear} The Civic Chronic.</p>
+            <p>All failures preserved.</p>
+        </div>
+    </div>
+</footer>

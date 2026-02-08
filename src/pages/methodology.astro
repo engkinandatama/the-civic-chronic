@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Methodology | The Civic Chronic">
+    <Header />
+
+    <main
+        class="flex-grow flex flex-col items-center pt-32 pb-20 px-6 max-w-3xl mx-auto min-h-screen"
+    >
+        <h1
+            class="font-serif text-4xl md:text-5xl font-black text-ink mb-12 text-center"
+        >
+            Our Methodology
+        </h1>
+
+        <div
+            class="prose prose-lg text-gray-800 leading-relaxed space-y-8 font-light"
+        >
+            <p>
+                The Civic Chronic operates on a simple premise: <strong
+                    class="font-bold text-primary"
+                    >Observation is the first step of accountability.</strong
+                >
+            </p>
+
+            <p>
+                We do not lobby, we do not protest, and we do not offer
+                solutions. There are plenty of organizations dedicated to those
+                noble pursuits. Our role is strictly archival. We collect the
+                data of dysfunction: the receipts, the permits, the timestamps,
+                and the silence.
+            </p>
+
+            <h3 class="font-bold text-xl text-ink font-serif mt-8 mb-4">
+                The Selection Process
+            </h3>
+            <p>
+                Every case file in our archive undergoes a rigorous verification
+                process. We rely on public records, Freedom of Information
+                requests, and leaked internal memos to reconstruct the timeline
+                of failure. We look for specific criteria:
+            </p>
+            <ul class="list-disc pl-6 space-y-2 marker:text-primary">
+                <li>
+                    <strong>Scale:</strong> Does the failure impact a significant
+                    population or waste significant resources?
+                </li>
+                <li>
+                    <strong>Absurdity:</strong> Is the outcome diametrically opposed
+                    to the stated intent?
+                </li>
+                <li>
+                    <strong>Silence:</strong> Has the issue been ignored or buried
+                    by official channels?
+                </li>
+            </ul>
+
+            <h3 class="font-bold text-xl text-ink font-serif mt-8 mb-4">
+                A Note on Satire
+            </h3>
+            <p>
+                While the specific case files presented here are fictionalized
+                for this portfolio demonstration, they are amalgamations of very
+                real, very documented systemic failures from across the globe.
+                Reality is often stranger—and more broken—than anything we could
+                invent.
+            </p>
+
+            <div
+                class="mt-12 p-6 bg-gray-100 border-l-4 border-primary rounded-r"
+            >
+                <p class="text-sm font-medium italic text-gray-600">
+                    "The bureaucracy is expanding to meet the needs of the
+                    expanding bureaucracy." — Oscar Wilde
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
