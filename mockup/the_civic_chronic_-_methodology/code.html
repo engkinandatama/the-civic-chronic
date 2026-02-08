@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Civic Chronic - Methodology</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#111621",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#0e121b] dark:text-gray-100 antialiased min-h-screen flex flex-col overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="w-full border-b border-[#e8ebf3] dark:border-gray-800 bg-white dark:bg-[#161b26] sticky top-0 z-50">
+<div class="max-w-[1200px] mx-auto px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3 text-[#0e121b] dark:text-white group cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+<h2 class="text-lg font-black tracking-tighter uppercase leading-none">The Civic Chronic</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Archive</a>
+<a class="text-sm font-medium text-primary font-bold" href="#">Methodology</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+</nav>
+<button class="hidden md:flex bg-primary hover:bg-primary/90 text-white text-sm font-bold h-9 px-5 items-center justify-center rounded transition-colors uppercase tracking-wide">
+                Subscribe
+            </button>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-gray-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-grow w-full max-w-[1200px] mx-auto px-6 py-12 md:py-20">
+<!-- Hero / Title Section -->
+<div class="mb-16 md:mb-24 border-b border-primary/20 pb-12">
+<div class="flex flex-col gap-6 max-w-4xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-primary/10 text-primary w-fit">
+<span class="material-symbols-outlined text-sm">gavel</span>
+<span class="text-xs font-bold uppercase tracking-widest">Official Statement</span>
+</div>
+<h1 class="text-4xl md:text-6xl font-black leading-[0.95] tracking-tight text-[#0e121b] dark:text-white">
+                    METHODOLOGY &amp;<br/>SCOPE OF INQUIRY
+                </h1>
+<p class="text-xl md:text-2xl text-gray-500 dark:text-gray-400 font-light max-w-2xl leading-relaxed">
+                    Constructing the Archive of Failure: A systematic approach to documenting civic incompetence through rigorous satire and bureaucratic translation.
+                </p>
+</div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12 relative">
+<!-- Sticky Sidebar / Index -->
+<aside class="md:col-span-3 lg:col-span-3">
+<div class="sticky top-24 flex flex-col gap-6">
+<p class="text-xs font-bold uppercase text-gray-400 dark:text-gray-500 tracking-widest border-b border-gray-200 dark:border-gray-800 pb-2">Table of Contents</p>
+<nav class="flex flex-col gap-4">
+<a class="text-sm font-bold text-primary flex items-center gap-2 group" href="#purpose">
+<span class="w-6 text-xs text-primary/50">01</span>
+<span class="group-hover:translate-x-1 transition-transform">Purpose</span>
+</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary flex items-center gap-2 group transition-colors" href="#acquisition">
+<span class="w-6 text-xs text-gray-300">02</span>
+<span class="group-hover:translate-x-1 transition-transform">Data Acquisition</span>
+</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary flex items-center gap-2 group transition-colors" href="#truth-metric">
+<span class="w-6 text-xs text-gray-300">03</span>
+<span class="group-hover:translate-x-1 transition-transform">The 'Truth' Metric</span>
+</a>
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary flex items-center gap-2 group transition-colors" href="#statute-404">
+<span class="w-6 text-xs text-gray-300">04</span>
+<span class="group-hover:translate-x-1 transition-transform">Statute 404</span>
+</a>
+</nav>
+<div class="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary mb-2">info</span>
+<p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            This document is a living archive. Updates occur as frequently as public infrastructure fails.
+                        </p>
+<p class="text-[10px] text-gray-400 mt-2 font-mono">LAST UPDATED: 2024-10-24</p>
+</div>
+</div>
+</aside>
+<!-- Main Text Column -->
+<div class="md:col-span-9 lg:col-span-8 flex flex-col gap-16 md:pl-8 border-l border-gray-100 dark:border-gray-800">
+<!-- Section 01 -->
+<section class="scroll-mt-32 group" id="purpose">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="text-primary/20 text-4xl font-black tabular-nums">01.</span>
+<h3 class="text-2xl font-bold text-[#0e121b] dark:text-white uppercase tracking-tight">Statement of Purpose</h3>
+</div>
+<div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+<p class="mb-6">
+                            The Civic Chronic exists to meticulously catalog systemic breakdowns in public infrastructure and governance. We present these findings not as mere complaints, but as an irrefutable archive of neglect. Our mission is to transform the dull hum of bureaucratic incompetence into a resonant frequency of accountability.
+                        </p>
+<p>
+                            By documenting the mundane failures—the pothole that celebrated its third birthday, the bridge to nowhere that cost somewhere around $12M—we construct a mirror for civic leadership that reflects an uncomfortable reality.
+                        </p>
+</div>
+</section>
+<!-- Section 02 -->
+<section class="scroll-mt-32 group" id="acquisition">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="text-primary/20 text-4xl font-black tabular-nums">02.</span>
+<h3 class="text-2xl font-bold text-[#0e121b] dark:text-white uppercase tracking-tight">Data Acquisition Protocols</h3>
+</div>
+<div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+<p class="mb-6">
+                            Our methodology relies on a rigorous ingestion of public records, stalled FOIA requests, and the translation of bureaucratic obfuscation into plain English. We do not invent failures; we merely curate them.
+                        </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
+<div class="p-6 bg-white dark:bg-[#1a2130] border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">folder_open</span>
+<h4 class="font-bold text-sm mb-2 text-[#0e121b] dark:text-white">Public Record Scaping</h4>
+<p class="text-sm text-gray-500">Automated retrieval of city council meeting minutes and budget variance reports.</p>
+</div>
+<div class="p-6 bg-white dark:bg-[#1a2130] border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:border-primary/50 transition-colors">
+<span class="material-symbols-outlined text-primary mb-3">visibility_off</span>
+<h4 class="font-bold text-sm mb-2 text-[#0e121b] dark:text-white">Redaction Analysis</h4>
+<p class="text-sm text-gray-500">Determining the severity of a scandal by the quantity of black ink used to hide it.</p>
+</div>
+</div>
+<p>
+                            Every data point is cross-referenced against actual resident experiences. If the data says the road is paved, but a sedan has been swallowed whole by a crater on Main St, we prioritize the sedan.
+                        </p>
+</div>
+</section>
+<!-- Section 03 -->
+<section class="scroll-mt-32 group" id="truth-metric">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="text-primary/20 text-4xl font-black tabular-nums">03.</span>
+<h3 class="text-2xl font-bold text-[#0e121b] dark:text-white uppercase tracking-tight">The 'Truth' Metric</h3>
+</div>
+<div class="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+<p class="mb-6">
+                            We utilize a proprietary satire index to determine the severity of a civic failure, weighting incompetence against public expenditure. The formula is approximately:
+                        </p>
+<div class="py-6 px-8 bg-primary/5 dark:bg-primary/10 border-l-4 border-primary my-6 font-mono text-sm md:text-base text-primary dark:text-primary/80">
+                            (Cost of Project × Days Delayed) / (Number of Excuses Given)² = Severity Score
+                        </div>
+<p>
+                            Scores exceeding 1,000 are automatically flagged for a "Feature Story." Scores exceeding 10,000 are forwarded to the Department of Irony for immediate processing.
+                        </p>
+</div>
+</section>
+<!-- Section 04 -->
+<section class="scroll-mt-32 group" id="statute-404">
+<div class="flex items-baseline gap-4 mb-4">
+<span class="text-primary/20 text-4xl font-black tabular-nums">04.</span>
+<h3 class="text-2xl font-bold text-[#0e121b] dark:text-white uppercase tracking-tight">Statute 404: Satirical Exemption</h3>
+</div>
+<div class="bg-white dark:bg-[#1a2130] border border-gray-200 dark:border-gray-700 rounded p-6 md:p-8 shadow-sm">
+<div class="flex flex-col md:flex-row gap-6 items-start">
+<div class="shrink-0 bg-gray-100 dark:bg-gray-800 p-3 rounded-full">
+<span class="material-symbols-outlined text-gray-400 text-3xl">policy</span>
+</div>
+<div>
+<h4 class="text-lg font-bold text-[#0e121b] dark:text-white mb-2">Acknowledgement of Satire</h4>
+<p class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mb-6">
+                                    By proceeding, the reader acknowledges that 'The Civic Chronic' is a work of satire based on real frustrations. All references to competent governance are purely coincidental and likely a typographical error. No politicians were harmed in the making of this website, though their egos may sustain minor bruising.
+                                </p>
+<div class="flex items-center gap-4 pt-4 border-t border-gray-100 dark:border-gray-700">
+<label class="flex items-center gap-3 cursor-pointer group/toggle">
+<div class="relative flex h-[24px] w-[44px] items-center rounded-full border-none bg-gray-200 dark:bg-gray-600 p-1 transition-colors has-[:checked]:bg-primary">
+<div class="h-4 w-4 rounded-full bg-white shadow-sm transition-all has-[:checked]:translate-x-[20px]"></div>
+<input checked="" class="hidden peer" type="checkbox"/>
+<div class="h-4 w-4 rounded-full bg-white absolute left-1 peer-checked:translate-x-5 transition-transform"></div>
+</div>
+<span class="text-xs font-bold uppercase text-gray-500 group-hover/toggle:text-primary transition-colors">I Acknowledge</span>
+</label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Block -->
+<div class="mt-12 pt-12 border-t border-gray-200 dark:border-gray-800">
+<div class="flex flex-col gap-2">
+<p class="font-display text-3xl text-gray-400 font-black tracking-tighter opacity-30 select-none">THE EDITORIAL BOARD</p>
+<p class="text-sm font-bold text-gray-500 uppercase tracking-widest">Signed &amp; Sealed</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-primary text-white border-t border-primary/20 mt-auto">
+<div class="max-w-[1200px] mx-auto px-6 py-16">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<!-- Brand Col -->
+<div class="col-span-1 md:col-span-2 flex flex-col gap-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/90 text-4xl">verified_user</span>
+<div>
+<h2 class="text-xl font-black tracking-tight leading-none">THE CIVIC CHRONIC</h2>
+<p class="text-xs text-white/60 uppercase tracking-widest mt-1">Department of Public Records</p>
+</div>
+</div>
+<p class="text-white/70 text-sm max-w-sm leading-relaxed">
+                        Documenting the intersection of good intentions and bad execution. We serve the public by making sure nothing gets done without a paper trail.
+                    </p>
+</div>
+<!-- Links Col -->
+<div class="col-span-1">
+<h4 class="text-sm font-bold uppercase tracking-widest text-white/50 mb-6">Directory</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Archives</a></li>
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Methodology</a></li>
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Submit a Failure</a></li>
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Contact</a></li>
+</ul>
+</div>
+<!-- Legal Col -->
+<div class="col-span-1">
+<h4 class="text-sm font-bold uppercase tracking-widest text-white/50 mb-6">Legal</h4>
+<ul class="flex flex-col gap-3">
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-white/80 hover:text-white text-sm font-medium transition-colors" href="#">Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-white/40 text-xs">© 2024 The Civic Chronic. All failures reserved.</p>
+<div class="flex items-center gap-2 text-white/40 text-xs uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">public</span>
+<span>Designed for Bureaucracy</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

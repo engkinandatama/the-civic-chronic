@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Civic Chronic</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;700&amp;family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#16439c",
+                        "background-light": "#f6f6f8", // Slightly cool off-white for archival feel
+                        "background-dark": "#111621",
+                        "paper": "#fbfbf9", // Warmer paper tone for specific areas
+                        "ink": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        "display": ["Work Sans", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-ink dark:text-gray-100 font-display transition-colors duration-300 antialiased overflow-x-hidden">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Header / Navigation -->
+<header class="fixed top-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-start mix-blend-multiply dark:mix-blend-normal pointer-events-none">
+<!-- Left empty for balance, or could hold date/issue number -->
+<div class="hidden md:block w-24 text-xs font-bold tracking-widest uppercase opacity-40">
+                Vol. IV
+            </div>
+<!-- Menu Button -->
+<div class="pointer-events-auto ml-auto">
+<button class="flex items-center justify-center gap-2 h-10 px-6 bg-primary text-white rounded hover:bg-opacity-90 transition-all shadow-sm">
+<span class="text-sm font-bold tracking-wide uppercase">Menu</span>
+<span class="material-symbols-outlined text-[18px]">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Wrapper -->
+<main class="flex-grow flex flex-col items-center justify-center pt-24 pb-20 px-4 md:px-8">
+<!-- Hero Section -->
+<div class="w-full max-w-4xl flex flex-col items-center text-center mb-16 md:mb-24 animate-fade-in-up">
+<!-- Logo Mark (Optional Abstract) -->
+<div class="mb-8 text-primary opacity-80">
+<span class="material-symbols-outlined text-5xl">gavel</span>
+</div>
+<!-- Main Title -->
+<h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-black text-ink dark:text-white leading-[0.9] tracking-tight mb-6">
+                    THE CIVIC<br class="hidden md:block"/> CHRONIC
+                </h1>
+<!-- Subtitle -->
+<div class="relative py-4 px-8">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-primary/30"></div>
+<h2 class="font-serif italic text-lg md:text-2xl text-gray-500 dark:text-gray-400 font-light">
+                        A record of how the world’s systems are meant to work?
+                    </h2>
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-primary/30"></div>
+</div>
+</div>
+<!-- Manifesto Section -->
+<article class="w-full max-w-[640px] flex flex-col gap-8 text-center md:text-justify leading-relaxed text-gray-800 dark:text-gray-300 text-lg md:text-xl font-light">
+<p>
+<span class="float-left text-5xl md:text-6xl font-serif font-bold text-primary mr-3 mt-[-10px] leading-none opacity-20">W</span>e document the friction of modern life. Not the grand collapses that make headlines, but the quiet, systemic grinding of gears that were never quite oiled correctly. This is an archive of the bureaucratic, the overlooked, and the delightfully broken.
+                </p>
+<p>
+                    From city planning errors that serve no one to forms that submit into the digital void, <span class="font-medium text-primary">The Civic Chronic</span> serves as a testament to human error in the age of algorithmic efficiency. We believe that to truly understand a system, one must first painstakingly observe exactly where it fails.
+                </p>
+<p>
+                    This is not a complaint box. It is a museum of intent versus reality. Welcome to the archives.
+                </p>
+</article>
+<!-- Decorative Divider -->
+<div class="w-full max-w-[120px] h-[1px] bg-gray-300 dark:bg-gray-700 my-16"></div>
+<!-- Image/Visual Break (Abstract) -->
+<div class="w-full max-w-3xl mb-16 grayscale opacity-80 hover:grayscale-0 transition-all duration-700">
+<div class="aspect-[21/9] w-full bg-cover bg-center rounded overflow-hidden relative shadow-inner" data-alt="Abstract architectural concrete structure with geometric shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAsDv-ktvx6RgpUXK8VsOX7mwfYcmmT3F9DJY2eg-jA6PjrpLdLL72FtF0fKFdkFJsvy1AuqSiHpCVu0S00KdqxIpifubvjgvryiZvZfnlZjZb8fh5mpFjTJuXzJDcSpdXnYhG5PZmVzWfzbIwL-qNvdArkosQp_cG2fusu35ACFhjniVPK_yo_PjpwvsWZYFQ-w-n7KZQ5UsJ_0IP8DXDbrV1acULxvNnaI2UCGDIG_JWMsRxXRAlVa1KindpLUzPPFl_jdeNbIXM-');">
+<div class="absolute inset-0 bg-gradient-to-t from-background-light/80 to-transparent dark:from-background-dark/80 mix-blend-overlay"></div>
+</div>
+<p class="text-xs text-center mt-3 text-gray-400 uppercase tracking-widest font-bold">Figure 1.A — The Unused walkway</p>
+</div>
+<!-- Latest Entries Preview (Mini Grid) -->
+<div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+<!-- Item 1 -->
+<a class="group flex flex-col gap-3" href="#">
+<div class="aspect-[4/3] w-full bg-gray-200 dark:bg-gray-800 rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Stacked paper files and folders in an office" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBei-f4LW_PlF3BFZAK6_tTcWYEzD17ZPuWKGFWWQVaPCpqIGH2MQ-dJmjhKBOJELrqI-lnf-lfYw4LYIPi5CwwImzTK0Lo95cosx7OF5HdyJ1GS7bIkJHF0PT527IDf6tBoumE12yUak7pIYSxgO73tNDs9RIlTinFJZJY2Qpkd4MlAzsop_5R9zsCg2M__M4_w1cKF2bRMOf97CtObFnL0lf6CM-xxP7_VDkdbnpmFmOf6ZbYhG0Enr0RN8P3bnh6xSeClR8pZbOO')"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Architecture</span>
+<h3 class="font-serif text-xl text-ink dark:text-white leading-tight group-hover:underline decoration-1 underline-offset-4">The Staircase to Nowhere</h3>
+<span class="text-sm text-gray-500 mt-1">London, UK — 2023</span>
+</div>
+</a>
+<!-- Item 2 -->
+<a class="group flex flex-col gap-3" href="#">
+<div class="aspect-[4/3] w-full bg-gray-200 dark:bg-gray-800 rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Old rusty electrical panel with wires" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDJmDq3hR6KGWRU6gard7jhdfue9Gfx6hcGXj5mH9wIFansz_TdNql27i7c8_FAGggC59DAFXxEHGxFUmtacnMgD-HL-uO48YnJ4RLUP-xIEl4-UB8fZDiXmiW1j3sGht56CNcEk61ETKb3VQCpD6WsIzVXXpzccyonrJspZQ4ZBOwnEGIl2wdLqIMp631hkzPNY0HofFrCBQ3uJ5OCLiWB9qPTqCiDkJfSE0-vdlGSXJgmvAkSL3WCyiwGzvR-p6h-VzMeYsdExrEk')"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Infrastructure</span>
+<h3 class="font-serif text-xl text-ink dark:text-white leading-tight group-hover:underline decoration-1 underline-offset-4">Permit #404: Not Found</h3>
+<span class="text-sm text-gray-500 mt-1">New York, USA — 2024</span>
+</div>
+</a>
+<!-- Item 3 -->
+<a class="group flex flex-col gap-3" href="#">
+<div class="aspect-[4/3] w-full bg-gray-200 dark:bg-gray-800 rounded overflow-hidden relative">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Empty concrete benches in a brutalist park" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9ili_R648Zc36pRQOYBAnHkPoFXXbey6i0WhvH2LS9EwZw5Fw_LTpCizjH32K2cUrDqg-KOBIcXziZrukV8EPfjG7Xwbz3YEXfHbr3Blg-L3J02uUyyHGJxcEzPajyHVIJbjgyq5pp-79vXMhDvH7TypidK9rBzIAjSJ_HuilF6Zvmf9eFwcRQJkupfxADqsqpwCYqTPW04DAbbZ74GIzbLMC_HgPMCQ7OUXN7cPEjN9DUBE9_I0RKaNYp_-WSQxi1gDZWGhshTa4')"></div>
+</div>
+<div class="flex flex-col">
+<span class="text-xs font-bold text-primary uppercase tracking-wider mb-1">Public Space</span>
+<h3 class="font-serif text-xl text-ink dark:text-white leading-tight group-hover:underline decoration-1 underline-offset-4">The Bench of Solitude</h3>
+<span class="text-sm text-gray-500 mt-1">Berlin, DE — 2022</span>
+</div>
+</a>
+</div>
+<!-- CTA Button -->
+<div class="mt-16">
+<button class="px-8 py-3 border border-gray-300 dark:border-gray-700 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                    Explore the Full Index
+                </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-gray-200 dark:border-gray-800 py-12 px-6 bg-[#f2f2f4] dark:bg-[#0d1119]">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col text-center md:text-left">
+<h4 class="font-serif font-bold text-xl mb-1">THE CIVIC CHRONIC</h4>
+<p class="text-sm text-gray-500">Documenting failure since yesterday.</p>
+</div>
+<div class="flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+<a class="hover:text-primary transition-colors" href="#">Submit a Failure</a>
+<a class="hover:text-primary transition-colors" href="#">About</a>
+<a class="hover:text-primary transition-colors" href="#">Archives</a>
+<a class="hover:text-primary transition-colors" href="#">Legal</a>
+</div>
+<div class="text-xs text-gray-400 text-center md:text-right">
+<p>© 2024 The Civic Chronic.</p>
+<p>All failures preserved.</p>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
