@@ -16,113 +16,110 @@
         </a>
 
         <!-- Menu Button -->
-        <div class="pointer-events-auto ml-auto">
-            <button
-                id="menu-toggle"
-                class="group flex items-center justify-center gap-2 h-10 px-5 bg-white/20 backdrop-blur-sm border border-black/5 rounded-full text-ink hover:bg-white/40 hover:scale-105 transition-all duration-300 shadow-sm"
-            >
-                <span
-                    class="text-xs font-bold tracking-widest uppercase group-hover:tracking-[0.15em] transition-all"
-                    >Menu</span
-                >
-                <span class="material-symbols-outlined text-[20px]">menu</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Full Screen Overlay Navigation (Solid/Glass - NO BLEND MODE) -->
-    <nav
-        id="overlay-menu"
-        class="pointer-events-auto fixed inset-0 bg-[#f6f6f8] z-[60] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 scale-95 origin-center"
-    >
-        <!-- Close Button (Inside Overlay) -->
         <button
-            id="menu-close"
-            class="absolute top-6 right-6 md:right-12 h-10 px-5 text-ink hover:text-red-600 transition-colors flex items-center gap-2 group z-50"
+            id="menu-toggle"
+            class="pointer-events-auto group flex items-center justify-center h-10 bg-white/20 backdrop-blur-sm border border-black/5 rounded-full text-ink hover:bg-white/40 transition-all duration-300 shadow-sm overflow-hidden px-3 hover:pr-5"
         >
             <span
-                class="text-xs font-bold tracking-widest uppercase group-hover:tracking-[0.15em] transition-all"
-                >Close</span
+                class="text-xs font-bold tracking-widest uppercase overflow-hidden max-w-0 opacity-0 group-hover:max-w-[4rem] group-hover:opacity-100 group-hover:mr-2 transition-all duration-300 ease-out whitespace-nowrap"
+                >Menu</span
             >
-            <span class="material-symbols-outlined text-[20px]">close</span>
+            <span class="material-symbols-outlined text-[20px]">menu</span>
         </button>
-
-        <!-- Navigation Links -->
-        <ul
-            class="flex flex-col gap-6 md:gap-10 text-center relative z-10 w-full max-w-4xl px-4"
-        >
-            <li class="overflow-hidden group">
-                <a
-                    href="/"
-                    class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
-                    >Home</a
-                >
-                <span
-                    class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
-                ></span>
-            </li>
-            <li class="overflow-hidden group">
-                <a
-                    href="/archive"
-                    class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
-                    >Archive</a
-                >
-                <span
-                    class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
-                ></span>
-            </li>
-            <li class="overflow-hidden group">
-                <a
-                    href="/about"
-                    class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
-                    >About</a
-                >
-                <span
-                    class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
-                ></span>
-            </li>
-            <li class="overflow-hidden group">
-                <a
-                    href="/dashboard"
-                    class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
-                    >Dashboard</a
-                >
-                <span
-                    class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
-                ></span>
-            </li>
-            <li class="overflow-hidden group">
-                <a
-                    href="/submit"
-                    class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
-                    >Submit Report</a
-                >
-                <span
-                    class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
-                ></span>
-            </li>
-            <li
-                class="mt-8 md:mt-12 opacity-60 hover:opacity-100 transition-opacity"
-            >
-                <a
-                    href="/legal"
-                    class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-primary transition-colors"
-                    >Legal / Terms</a
-                >
-            </li>
-        </ul>
-
-        <!-- Decoration -->
-        <div
-            class="absolute bottom-12 left-0 w-full text-center opacity-5 pointer-events-none"
-        >
-            <span
-                class="material-symbols-outlined text-9xl text-ink animate-pulse"
-                >gavel</span
-            >
-        </div>
-    </nav>
+    </div>
 </header>
+
+<!-- Full Screen Overlay Navigation (Solid/Glass - NO BLEND MODE) -->
+<nav
+    id="overlay-menu"
+    class="fixed inset-0 bg-[#f6f6f8] z-[60] flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-500 scale-95 origin-center"
+>
+    <!-- Close Button (Inside Overlay) -->
+    <button
+        id="menu-close"
+        class="absolute top-6 right-6 md:right-12 h-10 px-5 text-ink hover:text-red-600 transition-colors flex items-center gap-2 group z-50"
+    >
+        <span
+            class="text-xs font-bold tracking-widest uppercase group-hover:tracking-[0.15em] transition-all"
+            >Close</span
+        >
+        <span class="material-symbols-outlined text-[20px]">close</span>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul
+        class="flex flex-col gap-6 md:gap-10 text-center relative z-10 w-full max-w-4xl px-4"
+    >
+        <li class="overflow-hidden group">
+            <a
+                href="/"
+                class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
+                >Home</a
+            >
+            <span
+                class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
+            ></span>
+        </li>
+        <li class="overflow-hidden group">
+            <a
+                href="/archive"
+                class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
+                >Archive</a
+            >
+            <span
+                class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
+            ></span>
+        </li>
+        <li class="overflow-hidden group">
+            <a
+                href="/about"
+                class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
+                >About</a
+            >
+            <span
+                class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
+            ></span>
+        </li>
+        <li class="overflow-hidden group">
+            <a
+                href="/dashboard"
+                class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
+                >Dashboard</a
+            >
+            <span
+                class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
+            ></span>
+        </li>
+        <li class="overflow-hidden group">
+            <a
+                href="/submit"
+                class="block font-serif text-5xl md:text-7xl font-black text-ink hover:text-primary transition-all duration-300 group-hover:-translate-y-1"
+                >Submit Report</a
+            >
+            <span
+                class="block h-px w-0 bg-primary mx-auto mt-2 transition-all duration-500 group-hover:w-24"
+            ></span>
+        </li>
+        <li
+            class="mt-8 md:mt-12 opacity-60 hover:opacity-100 transition-opacity"
+        >
+            <a
+                href="/legal"
+                class="text-xs md:text-sm font-bold uppercase tracking-[0.2em] text-gray-500 hover:text-primary transition-colors"
+                >Legal / Terms</a
+            >
+        </li>
+    </ul>
+
+    <!-- Decoration -->
+    <div
+        class="absolute bottom-12 left-0 w-full text-center opacity-5 pointer-events-none"
+    >
+        <span class="material-symbols-outlined text-9xl text-ink animate-pulse"
+            >gavel</span
+        >
+    </div>
+</nav>
 
 <script>
     function setupMenu() {
