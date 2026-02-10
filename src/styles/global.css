@@ -24,4 +24,9 @@
   body {
     @apply bg-background-light text-ink font-display transition-colors duration-300;
   }
+
+  /* Force pointer cursor on all interactive elements */
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer !important;
+  }
 }
