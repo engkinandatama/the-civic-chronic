@@ -2,31 +2,148 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="w-full border-t border-gray-200 py-12 px-6 bg-[#f2f2f4]">
+<footer class="w-full border-t border-gray-200 pt-12 pb-8 px-6 bg-[#f6f6f8]">
     <div
-        class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+        class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-12"
     >
-        <div class="flex flex-col text-center md:text-left">
-            <h4 class="font-serif font-bold text-xl mb-1 text-ink">
-                THE CIVIC CHRONIC
-            </h4>
-            <p class="text-sm text-gray-500">
-                Documenting failure since yesterday.
+        <!-- Column 1: Newsletter (Left) -->
+        <div class="w-full md:w-auto flex flex-col gap-4 max-w-sm">
+            <h5
+                class="font-serif font-bold text-lg text-ink uppercase tracking-widest border-b border-gray-300 pb-2"
+            >
+                Dept. of Redundancy
+            </h5>
+            <p class="text-xs text-gray-500 italic leading-relaxed">
+                Subscribe to receive daily updates on why your previous updates
+                were rejected.
             </p>
+
+            <form id="redundancy-form" class="flex flex-col gap-2 relative">
+                <div class="flex">
+                    <input
+                        type="email"
+                        placeholder="citizenship_id@gov.void"
+                        class="bg-white border border-gray-300 px-3 py-2 text-sm font-mono flex-grow outline-none focus:border-primary transition-colors disabled:opacity-50"
+                        required
+                    />
+                    <button
+                        type="submit"
+                        class="bg-ink text-white px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-primary transition-colors disabled:bg-gray-400"
+                    >
+                        File
+                    </button>
+                </div>
+
+                <!-- Feedback Area -->
+                <div
+                    id="form-feedback"
+                    class="text-[10px] font-mono mt-1 min-h-[1.5em] text-primary hidden"
+                >
+                    Processing form 27B-6... <span class="animate-pulse">_</span
+                    >
+                </div>
+            </form>
         </div>
-        <div class="flex gap-8 text-sm font-medium text-gray-600">
-            <a href="#" class="hover:text-primary transition-colors"
-                >Submit a Failure</a
+
+        <!-- Column 2: Links & Brand (Right) -->
+        <div
+            class="flex flex-col gap-6 text-center md:text-right w-full md:w-auto items-center md:items-end"
+        >
+            <!-- Links (Top) -->
+            <div
+                class="flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-2 text-sm font-medium text-gray-600"
             >
-            <a href="#" class="hover:text-primary transition-colors">About</a>
-            <a href="/archive" class="hover:text-primary transition-colors"
-                >Archives</a
-            >
-            <a href="#" class="hover:text-primary transition-colors">Legal</a>
-        </div>
-        <div class="text-xs text-gray-400 text-center md:text-right">
-            <p>&copy; {currentYear} The Civic Chronic.</p>
-            <p>All failures preserved.</p>
+                <a href="/submit" class="hover:text-primary transition-colors"
+                    >Submit a Failure</a
+                >
+                <a href="/about" class="hover:text-primary transition-colors"
+                    >About</a
+                >
+                <a href="/archive" class="hover:text-primary transition-colors"
+                    >Archives</a
+                >
+                <a href="/legal" class="hover:text-primary transition-colors"
+                    >Legal</a
+                >
+                <a
+                    href="/dashboard"
+                    class="hover:text-primary transition-colors">Dashboard</a
+                >
+            </div>
+
+            <!-- Brand (Bottom) -->
+            <div>
+                <h4 class="font-serif font-bold text-xl mb-1 text-ink">
+                    THE CIVIC CHRONIC
+                </h4>
+                <p class="text-sm text-gray-500 italic">
+                    Documenting failure since yesterday.
+                </p>
+            </div>
         </div>
     </div>
+
+    <!-- Bottom: Credits (Separated) -->
+    <div
+        class="max-w-6xl mx-auto border-t border-gray-300 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 gap-4"
+    >
+        <p>
+            &copy; {currentYear} The Civic Chronic. All rights reserved (pending approval).
+        </p>
+        <p class="font-mono">
+            Status: <span class="text-green-600">●</span> Operational
+        </p>
+    </div>
 </footer>
+
+<script>
+    document.addEventListener("astro:page-load", () => {
+        const form = document.getElementById("redundancy-form");
+        const feedback = document.getElementById("form-feedback");
+        const btn = form?.querySelector("button");
+        const input = form?.querySelector("input");
+
+        if (form) {
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                if (!feedback || !btn || !input) return;
+
+                // Lock form
+                btn.disabled = true;
+                input.disabled = true;
+                feedback.classList.remove("hidden");
+                feedback.innerHTML =
+                    'Processing form 27B-6... <span class="animate-pulse">_</span>';
+
+                // Satirical delay
+                setTimeout(() => {
+                    feedback.innerText = "Verifying lack of credentials...";
+                }, 1500);
+
+                setTimeout(() => {
+                    feedback.innerText = "Faxing request to 1985...";
+                }, 3000);
+
+                setTimeout(() => {
+                    // Randomize outcome
+                    const fail = Math.random() > 0.5;
+
+                    if (fail) {
+                        feedback.classList.add("text-red-600");
+                        feedback.innerText =
+                            "Error: Blue ink required. Please resubmit.";
+                        btn.disabled = false;
+                        input.disabled = false;
+                    } else {
+                        feedback.classList.remove("text-primary");
+                        feedback.classList.add("text-green-700");
+                        feedback.innerText =
+                            "Success! You are now #9,201 on the waitlist.";
+                        input.value = ""; // clear but keep disabled to show dominance
+                    }
+                }, 5000);
+            });
+        }
+    });
+</script>

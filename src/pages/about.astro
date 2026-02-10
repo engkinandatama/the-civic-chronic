@@ -1,0 +1,115 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import RedactedText from "../components/RedactedText.astro";
+---
+
+<Layout title="About | The Civic Chronic">
+    <Header />
+
+    <main
+        class="flex-grow flex flex-col items-center pt-32 pb-20 px-6 max-w-3xl mx-auto min-h-screen"
+    >
+        <h1
+            class="font-serif text-4xl md:text-5xl font-black text-ink mb-12 text-center"
+        >
+            About The Archive
+        </h1>
+
+        <div
+            class="prose prose-lg text-gray-800 leading-relaxed space-y-8 font-light"
+        >
+            <p
+                class="text-xl leading-relaxed border-l-4 border-primary pl-6 italic"
+            >
+                "The Civic Chronic is a digital monument to the <RedactedText
+                    text="efficiency"
+                    hint="INCOMPETENCE"
+                /> of modern systems."
+            </p>
+
+            <h3
+                class="font-bold text-xl text-ink font-serif mt-12 mb-4 uppercase tracking-widest"
+            >
+                Mission Statement
+            </h3>
+            <p>
+                We live in an era of unprecedented data, yet the most important
+                stories—the quiet failures of infrastructure and policy—are
+                often buried under mountains of paperwork. This archive exists
+                to <strong class="font-bold text-primary">excavate</strong> those
+                stories.
+            </p>
+            <p>
+                We do not protest. We do not lobby. We simply observe. By
+                collecting the receipts, permits, and timestamps of dysfunction,
+                we ensure that nothing is truly lost to the shredder.
+            </p>
+
+            <h3
+                class="font-bold text-xl text-ink font-serif mt-12 mb-4 uppercase tracking-widest"
+            >
+                Our Methodology
+            </h3>
+            <p>
+                Every case file in our archive undergoes a rigorous verification
+                process. We look for specific criteria that define a "Systemic
+                Failure":
+            </p>
+            <ul class="list-disc pl-6 space-y-2 marker:text-primary">
+                <li>
+                    <strong>Scale:</strong> Does the failure impact a significant
+                    population or waste >$1M in resources?
+                </li>
+                <li>
+                    <strong>Absurdity:</strong> Is the outcome diametrically opposed
+                    to the stated intent? (e.g., a "Paperless Initiative" that increases
+                    paper usage).
+                </li>
+                <li>
+                    <strong>Silence:</strong> Has the issue been ignored or buried
+                    by official channels?
+                </li>
+            </ul>
+
+            <h3
+                class="font-bold text-xl text-ink font-serif mt-12 mb-4 uppercase tracking-widest"
+            >
+                About This Project
+            </h3>
+            <p>
+                <em>The Civic Chronic</em> is a portfolio piece designed to explore
+                <strong>Brutalist Web Design</strong> and <strong
+                    >Interactive Storytelling</strong
+                >. It is built with <a
+                    href="https://astro.build"
+                    target="_blank"
+                    class="underline decoration-primary hover:text-primary transition-colors"
+                    >Astro 5</a
+                > and <a
+                    href="https://tailwindcss.com"
+                    target="_blank"
+                    class="underline decoration-primary hover:text-primary transition-colors"
+                    >Tailwind CSS v4</a
+                >.
+            </p>
+            <p>
+                While the specific cases presented here are satirical fiction,
+                they are inspired by real-world events. Any resemblance to
+                actual bureaucratic disasters is purely coincidental.
+            </p>
+
+            <div
+                class="mt-12 p-6 bg-gray-100 border-t border-b border-gray-200 text-center"
+            >
+                <p class="text-sm font-medium italic text-gray-600">
+                    "The bureaucracy is expanding to meet the needs of the
+                    expanding bureaucracy." — Oscar Wilde
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>

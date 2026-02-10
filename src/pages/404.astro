@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="404 - Record Not Found | The Civic Chronic">
+    <Header />
+
+    <main
+        class="flex-grow flex flex-col items-center justify-center pt-24 pb-20 px-6 min-h-screen text-center"
+    >
+        <div class="mb-8 p-4 border-2 border-primary/20 bg-primary/5 rounded">
+            <span
+                class="material-symbols-outlined text-6xl text-primary animate-pulse"
+                >lock</span
+            >
+        </div>
+
+        <h1 class="font-serif text-6xl md:text-8xl font-black text-ink mb-4">
+            404
+        </h1>
+        <div class="h-1 w-24 bg-ink mb-6 mx-auto"></div>
+
+        <h2
+            class="font-display text-xl md:text-2xl font-bold uppercase tracking-widest text-gray-500 mb-8"
+        >
+            Record Not Found / Redacted
+        </h2>
+
+        <p class="max-w-md text-gray-600 text-lg mb-12">
+            The file you are looking for has either been misplaced, destroyed,
+            or never existed in the first place. Please fill out form 404-B to
+            request an inquiry.
+        </p>
+
+        <a
+            href="/"
+            class="px-8 py-3 bg-ink text-white font-bold uppercase tracking-widest rounded hover:bg-gray-800 transition-colors"
+        >
+            Return to Index
+        </a>
+    </main>
+
+    <Footer />
+</Layout>

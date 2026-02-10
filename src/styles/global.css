@@ -6,7 +6,7 @@
   --color-background-dark: #111621;
   --color-paper: #fbfbf9;
   --color-ink: #1a1a1a;
-  
+
   --font-display: "Work Sans", sans-serif;
   --font-serif: "Playfair Display", serif;
 }
@@ -14,7 +14,13 @@
 @layer base {
   html {
     @apply antialiased scroll-smooth;
+    scrollbar-width: none;
   }
+
+  html::-webkit-scrollbar {
+    display: none;
+  }
+
   body {
     @apply bg-background-light text-ink font-display transition-colors duration-300;
   }

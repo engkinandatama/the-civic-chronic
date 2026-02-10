@@ -1,0 +1,338 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import type { GetStaticPaths, Page } from "astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const allCases = await getCollection("cases");
+    const sortedCases = allCases.sort(
+        (a: CollectionEntry<"cases">, b: CollectionEntry<"cases">) =>
+            b.data.date.valueOf() - a.data.date.valueOf(),
+    );
+
+    // DEBUG: Check if images are present
+    console.log(
+        "DEBUG: First case cover image:",
+        sortedCases[0]?.data.cover_image,
+    );
+    console.log(
+        "DEBUG: Number of cases with images:",
+        sortedCases.filter((c) => c.data.cover_image).length,
+    );
+
+    return paginate(sortedCases, { pageSize: 9 });
+}) satisfies GetStaticPaths;
+
+interface Props {
+    page: Page<CollectionEntry<"cases">>;
+}
+
+const { page } = Astro.props;
+
+// Fetch ALL cases for the client-side search index
+const allCasesForSearch = (await getCollection("cases")).map(
+    (c: CollectionEntry<"cases">) => ({
+        title: c.data.title,
+        slug: c.slug,
+        location: c.data.location,
+        date: c.data.date.getFullYear().toString(),
+        category: c.data.category,
+        snippet: c.body.slice(0, 150) + "...",
+        cover_image: c.data.cover_image,
+    }),
+);
+---
+
+<Layout title="Archive | The Civic Chronic">
+    <Header />
+
+    <main
+        class="flex-grow flex flex-col items-center pt-32 pb-20 px-4 md:px-8 min-h-screen"
+    >
+        <div class="w-full max-w-5xl mb-12">
+            <h1
+                class="font-serif text-4xl md:text-5xl font-black text-ink mb-4"
+            >
+                The Archives
+            </h1>
+            <p class="text-gray-500 text-lg font-light mb-8">
+                Requesting page {page.currentPage} of {page.lastPage} from the central
+                database...
+            </p>
+
+            <!-- Search Bar -->
+            <div class="relative max-w-md">
+                <input
+                    type="text"
+                    id="search-input"
+                    placeholder="Search complete database..."
+                    class="w-full pl-12 pr-4 py-4 bg-white border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-serif placeholder:font-sans placeholder:text-gray-400"
+                />
+                <span
+                    class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none"
+                    >search</span
+                >
+            </div>
+        </div>
+
+        <!-- PAGINATED GRID (Default View) -->
+        <div
+            id="paginated-grid"
+            class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12"
+        >
+            {
+                page.data.map((entry) => (
+                    <a
+                        href={`/case/${entry.slug}`}
+                        class="case-card group border border-gray-200 bg-white p-6 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
+                    >
+                        <div class="aspect-[4/3] w-full bg-gray-200 rounded overflow-hidden relative mb-4">
+                            {entry.data.cover_image && (
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    style={`background-image: url('${entry.data.cover_image}')`}
+                                />
+                            )}
+                        </div>
+
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold text-primary uppercase tracking-widest border border-primary/20 px-2 py-1 rounded-sm">
+                                {entry.data.category}
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">
+                                {entry.data.date.getFullYear()}
+                            </span>
+                        </div>
+
+                        <h2 class="font-serif text-2xl font-bold text-ink mb-3 group-hover:text-primary transition-colors">
+                            {entry.data.title}
+                        </h2>
+
+                        <p class="text-sm text-gray-500 mb-6 line-clamp-3 flex-grow font-serif">
+                            {entry.body.slice(0, 150)}...
+                        </p>
+
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center text-xs font-medium text-gray-400">
+                            <span>{entry.data.location}</span>
+                            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform text-ink">
+                                Read File{" "}
+                                <span class="material-symbols-outlined text-[14px]">
+                                    arrow_forward
+                                </span>
+                            </span>
+                        </div>
+                    </a>
+                ))
+            }
+        </div>
+
+        <!-- SEARCH RESULTS GRID (Hidden by default) -->
+        <div
+            id="search-results-grid"
+            class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 hidden"
+        >
+            <!-- Results injected here -->
+        </div>
+
+        <!-- LOADING STATE (Hidden by default) -->
+        <div
+            id="search-loading"
+            class="hidden text-center text-primary font-mono my-12"
+        >
+            Searching tape drives... <span class="animate-pulse">_</span>
+        </div>
+
+        <!-- NO RESULTS (Hidden by default) -->
+        <p
+            id="no-results"
+            class="hidden text-center text-gray-500 mt-12 font-serif italic"
+        >
+            No records found. The files may have been lost in a fire.
+        </p>
+
+        <!-- Pagination Controls (Hidden when searching) -->
+        <div
+            id="pagination-controls"
+            class="flex justify-center items-center gap-6 font-mono text-sm text-gray-500"
+        >
+            {
+                page.url.prev ? (
+                    <a
+                        href={page.url.prev}
+                        class="flex items-center gap-2 hover:text-primary transition-colors uppercase tracking-widest"
+                    >
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                        Previous
+                    </a>
+                ) : (
+                    <span class="text-gray-300 cursor-not-allowed flex items-center gap-2 uppercase tracking-widest">
+                        <span class="material-symbols-outlined">
+                            arrow_back
+                        </span>
+                        Previous
+                    </span>
+                )
+            }
+
+            <span class="bg-gray-200 px-3 py-1 rounded text-ink font-bold">
+                Page {page.currentPage}
+            </span>
+
+            {
+                page.url.next ? (
+                    <a
+                        href={page.url.next}
+                        class="flex items-center gap-2 hover:text-primary transition-colors uppercase tracking-widest"
+                    >
+                        Next
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </a>
+                ) : (
+                    <span class="text-gray-300 cursor-not-allowed flex items-center gap-2 uppercase tracking-widest">
+                        Next
+                        <span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>
+                    </span>
+                )
+            }
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<!-- Inject Search Index -->
+<script define:vars={{ allCasesForSearch }}>
+    window.SEARCH_INDEX = allCasesForSearch;
+</script>
+
+<script>
+    // Define the interface for the search index items
+    interface SearchIndexItem {
+        title: string;
+        slug: string;
+        location: string;
+        date: string;
+        category: string;
+        snippet: string;
+        cover_image?: string;
+    }
+
+    // Extend Window interface to include SEARCH_INDEX
+    declare global {
+        interface Window {
+            SEARCH_INDEX: SearchIndexItem[];
+        }
+    }
+
+    document.addEventListener("astro:page-load", () => {
+        const searchInput = document.getElementById(
+            "search-input",
+        ) as HTMLInputElement;
+        const paginatedGrid = document.getElementById("paginated-grid");
+        const searchResultsGrid = document.getElementById(
+            "search-results-grid",
+        );
+        const paginationControls = document.getElementById(
+            "pagination-controls",
+        );
+        const noResults = document.getElementById("no-results");
+        const loadingIndicator = document.getElementById("search-loading");
+
+        if (
+            !searchInput ||
+            !paginatedGrid ||
+            !searchResultsGrid ||
+            !paginationControls ||
+            !noResults ||
+            !loadingIndicator
+        )
+            return;
+
+        searchInput.addEventListener("input", (e) => {
+            const target = e.target as HTMLInputElement;
+            if (!target) return;
+
+            const query = target.value.toLowerCase().trim();
+
+            if (query.length === 0) {
+                // Restore Default View
+                paginatedGrid.classList.remove("hidden");
+                paginationControls.classList.remove("hidden");
+                searchResultsGrid.classList.add("hidden");
+                noResults.classList.add("hidden");
+                loadingIndicator.classList.add("hidden");
+                return;
+            }
+
+            // Switch to Search Mode
+            paginatedGrid.classList.add("hidden");
+            paginationControls.classList.add("hidden");
+            searchResultsGrid.classList.remove("hidden");
+
+            // Filter logic
+            const results = window.SEARCH_INDEX.filter(
+                (item) =>
+                    item.title.toLowerCase().includes(query) ||
+                    item.location.toLowerCase().includes(query) ||
+                    item.category.toLowerCase().includes(query) ||
+                    item.date.includes(query),
+            );
+
+            // Render Results
+            if (results.length > 0) {
+                noResults.classList.add("hidden");
+                searchResultsGrid.innerHTML = results
+                    .map(
+                        (item) => `
+                    <a href="/case/${item.slug}" class="case-card group border border-gray-200 bg-white p-6 hover:shadow-lg transition-all duration-300 flex flex-col h-full animate-fade-in">
+                        <div class="aspect-[4/3] w-full bg-gray-200 rounded overflow-hidden relative mb-4">
+                            ${
+                                item.cover_image
+                                    ? `
+                                <div
+                                    class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                                    style="background-image: url('${item.cover_image}')"
+                                ></div>
+                            `
+                                    : ""
+                            }
+                        </div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="text-xs font-bold text-primary uppercase tracking-widest border border-primary/20 px-2 py-1 rounded-sm">
+                                ${item.category}
+                            </span>
+                            <span class="text-xs font-mono text-gray-400">
+                                ${item.date}
+                            </span>
+                        </div>
+                        <h2 class="font-serif text-2xl font-bold text-ink mb-3 group-hover:text-primary transition-colors">
+                            ${item.title}
+                        </h2>
+                        <p class="text-sm text-gray-500 mb-6 line-clamp-3 flex-grow font-serif">
+                            ${item.snippet}
+                        </p>
+                        <div class="mt-auto pt-4 border-t border-gray-100 flex justify-between items-center text-xs font-medium text-gray-400">
+                            <span>${item.location}</span>
+                            <span class="flex items-center gap-1 group-hover:translate-x-1 transition-transform text-ink">
+                                Read File <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                            </span>
+                        </div>
+                    </a>
+                `,
+                    )
+                    .join("");
+            } else {
+                searchResultsGrid.innerHTML = "";
+                noResults.classList.remove("hidden");
+            }
+        });
+    });
+</script>

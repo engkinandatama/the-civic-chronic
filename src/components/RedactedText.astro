@@ -1,0 +1,55 @@
+---
+interface Props {
+    text: string;
+    hint?: string; // Optional hover hint
+}
+
+const { text, hint = "CLASSIFIED" } = Astro.props;
+---
+
+<span
+    class="redacted-text relative inline-block group cursor-pointer select-none"
+    data-hint={hint}
+>
+    <!-- The Redaction Bar (Visible by default) -->
+    <span
+        class="redaction-bar absolute inset-0 bg-ink group-hover:bg-transparent group-active:bg-transparent transition-all duration-300 z-10 flex items-center justify-center"
+    >
+        <!-- Tiny hint text inside the black bar (optional) -->
+        <span
+            class="text-[10px] uppercase font-bold text-white/30 tracking-widest opacity-0 group-hover:opacity-100 transition-opacity"
+        >
+            {hint}
+        </span>
+    </span>
+
+    <!-- The Actual Text (Hidden behind bar, revealed on hover/click) -->
+    <span
+        class="actual-text relative z-0 opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300 font-mono bg-yellow-100 px-1 text-ink"
+    >
+        {text}
+    </span>
+</span>
+
+<script>
+    // Handle click-to-reveal for mobile/touch
+    document.addEventListener("astro:page-load", () => {
+        const redactedElements = document.querySelectorAll(".redacted-text");
+
+        redactedElements.forEach((el) => {
+            el.addEventListener("click", () => {
+                el.classList.toggle("revealed");
+            });
+        });
+    });
+</script>
+
+<style>
+    /* Force reveal when .revealed class is present (toggled by click) */
+    .redacted-text.revealed .redaction-bar {
+        background-color: transparent;
+    }
+    .redacted-text.revealed .actual-text {
+        opacity: 1;
+    }
+</style>

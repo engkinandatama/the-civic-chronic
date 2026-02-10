@@ -1,0 +1,248 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Bureaucracy Dashboard | The Civic Chronic">
+    <Header />
+
+    <main class="flex-grow pt-32 pb-20 px-6 min-h-screen">
+        <div class="max-w-6xl mx-auto">
+            <header
+                class="mb-12 text-center md:text-left border-b border-gray-200 pb-8"
+            >
+                <h1
+                    class="font-serif text-4xl md:text-5xl font-black text-ink mb-4"
+                >
+                    System Status
+                </h1>
+                <p
+                    class="text-lg font-mono text-gray-500 flex items-center justify-center md:justify-start gap-3"
+                >
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                        ></span>
+                        <span
+                            class="relative inline-flex rounded-full h-2 w-2 bg-green-500"
+                        ></span>
+                    </span>
+                    OPERATIONAL (REGRETFULLY)
+                </p>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- METRIC 1: WASTE TICKER -->
+                <div
+                    class="bg-white border border-gray-200 p-8 flex flex-col justify-between h-full hover:border-primary transition-colors duration-300"
+                >
+                    <div>
+                        <h3
+                            class="font-bold text-xs text-primary uppercase tracking-widest mb-4"
+                        >
+                            Final Taxpayer Cost
+                        </h3>
+                        <div
+                            class="font-mono text-3xl md:text-4xl font-bold text-ink tracking-tight"
+                            id="waste-counter"
+                        >
+                            $842,910,230.00
+                        </div>
+                    </div>
+                    <p
+                        class="text-[10px] text-gray-400 mt-4 font-mono uppercase border-t border-gray-100 pt-3"
+                    >
+                        Rate: +$450.00 / sec
+                    </p>
+                </div>
+
+                <!-- METRIC 2: FORMS PROCESSED -->
+                <div
+                    class="bg-white border border-gray-200 p-8 flex flex-col justify-between h-full hover:border-primary transition-colors duration-300"
+                >
+                    <div>
+                        <h3
+                            class="font-bold text-xs text-primary uppercase tracking-widest mb-4"
+                        >
+                            Forms Pending
+                        </h3>
+                        <div
+                            class="font-mono text-4xl font-bold text-ink flex items-center gap-2"
+                        >
+                            <span id="forms-counter">∞</span>
+                        </div>
+                        <div
+                            class="w-full bg-gray-100 h-1 mt-6 overflow-hidden"
+                        >
+                            <div
+                                class="bg-primary h-full w-[1%] animate-[loading_10s_ease-in-out_infinite]"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <p
+                        class="text-[10px] text-gray-400 mt-4 font-mono uppercase border-t border-gray-100 pt-3"
+                    >
+                        ETA: Computing...
+                    </p>
+                </div>
+
+                <!-- METRIC 3: MEETING EFFICIENCY -->
+                <div
+                    class="bg-white border border-gray-200 p-8 flex flex-col justify-between h-full hover:border-primary transition-colors duration-300"
+                >
+                    <h3
+                        class="font-bold text-xs text-primary uppercase tracking-widest mb-4"
+                    >
+                        Meeting Efficiency
+                    </h3>
+                    <div class="flex items-end gap-1 h-20 mt-2">
+                        <div
+                            class="w-1/2 bg-gray-200 h-[95%] relative group hover:bg-gray-300 transition-colors"
+                        >
+                            <span
+                                class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-gray-500 font-bold tracking-wider"
+                                >TALK</span
+                            >
+                        </div>
+                        <div class="w-1/2 bg-primary h-[5%] relative group">
+                            <span
+                                class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                                >1%</span
+                            >
+                            <span
+                                class="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-ink font-bold tracking-wider"
+                                >DO</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHART: PRINTER PAPER -->
+                <div
+                    class="col-span-1 md:col-span-2 lg:col-span-3 bg-[#f6f6f8] border border-gray-200 p-8 md:p-10"
+                >
+                    <div
+                        class="flex items-center gap-4 mb-8 pb-4 border-b border-gray-300"
+                    >
+                        <span
+                            class="material-symbols-outlined text-2xl text-gray-400"
+                            >print</span
+                        >
+                        <h3 class="font-serif text-xl font-bold text-ink">
+                            Global Printer Status
+                        </h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="material-symbols-outlined text-3xl text-red-500"
+                                >print_disabled</span
+                            >
+                            <div>
+                                <div
+                                    class="font-bold text-sm text-ink uppercase tracking-wide"
+                                >
+                                    Jammed
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    Floors 3, 4, 5, 8, 9, 12
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="material-symbols-outlined text-3xl text-orange-400"
+                                >water_drop</span
+                            >
+                            <div>
+                                <div
+                                    class="font-bold text-sm text-ink uppercase tracking-wide"
+                                >
+                                    Low Toner
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    Magenta (Replace Immediately)
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span
+                                class="material-symbols-outlined text-3xl text-gray-400"
+                                >power_off</span
+                            >
+                            <div>
+                                <div
+                                    class="font-bold text-sm text-ink uppercase tracking-wide"
+                                >
+                                    Offline
+                                </div>
+                                <div class="text-xs text-gray-500 mt-1">
+                                    Connection Lost (Error 404)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 text-center">
+                <a
+                    href="/submit"
+                    class="inline-block border border-gray-300 px-8 py-3 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-primary hover:text-white hover:border-primary transition-all duration-300"
+                >
+                    Report New Incident
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    function animateCounters() {
+        // Waste Counter Animation
+        const wasteCounter = document.getElementById("waste-counter");
+        let currentWaste = 842910230.0;
+
+        setInterval(() => {
+            currentWaste += 450 + Math.random() * 50; // Add random amount
+            if (wasteCounter) {
+                wasteCounter.innerText = currentWaste.toLocaleString("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                });
+            }
+        }, 1000);
+
+        // Forms Counter Animation
+        const formsCounter = document.getElementById("forms-counter");
+        let currentForms = 132409;
+
+        setInterval(() => {
+            currentForms += Math.floor(Math.random() * 5);
+            if (formsCounter) {
+                formsCounter.innerText = currentForms.toLocaleString();
+            }
+        }, 200);
+    }
+
+    document.addEventListener("astro:page-load", animateCounters);
+</script>
+
+<style>
+    @keyframes loading {
+        0% {
+            width: 1%;
+        }
+        50% {
+            width: 5%;
+        }
+        100% {
+            width: 1%;
+        }
+    }
+</style>

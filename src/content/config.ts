@@ -1,13 +1,15 @@
 import { defineCollection, z } from 'astro:content';
 
+
+// Force content reload (Update 2)
 const casesCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     date: z.date(),
-    status: z.enum(['Active Investigation', 'Indefinite Hold', 'Closed - Unresolved', 'Pending Review']),
+    status: z.string(),
     location: z.string(),
-    category: z.enum(['Infrastructure', 'Bureaucracy', 'Public Space', 'Policy']),
+    category: z.string(),
     bureaucracy_score: z.number().min(0).max(100),
     financials: z.object({
       budget: z.string(),
